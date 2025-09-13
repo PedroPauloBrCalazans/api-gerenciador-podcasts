@@ -1,7 +1,11 @@
+import { IncomingMessage } from "http";
 import { repositoryPodcast } from "../repositories/podcasts-repository";
 
-export const serviceFilterEpisodes = async (podCastName: string) => {
-  const data = await repositoryPodcast(podCastName);
+export const serviceFilterEpisodes = async (
+  podCastName: string | undefined
+) => {
+  const queryString = podCastName?.split("?p=")[1] ?? "";
+  const data = await repositoryPodcast(queryString);
 
   return data;
 };
