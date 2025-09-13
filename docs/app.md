@@ -49,3 +49,5 @@ response:
   },
 ];
 ```
+
+GET: retorna lista de episódios baseados em um parametro enviado pelo cliente do nome do podcast
